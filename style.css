@@ -1,0 +1,695 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: 0;
+    border: none;
+}
+
+:root {
+    --dark-color: #111111;
+    --primary-color: #878CFF;
+    --secondary-color: #28283E;
+    --white: #fff;
+    --gray: rgb(61, 61, 61);
+}
+
+.primary-btn,
+.secondary-btn {
+    width: 200px;
+    padding: .5em;
+    border-radius: 10px;
+    color: var(--white);
+    display: flex;
+    gap: .3em;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+}
+
+.secondary-btn {
+    border: 1px dashed var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.tertiary-btn {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    padding: .5em 1em;
+    border-radius: 50px;
+    border: 1px solid var(--white);
+    color: white;
+}
+
+.notable-drops-section,
+.trading-section,
+.top-collection,
+.creator-content,
+.explore-market {
+    background-image: url(images/general-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--white);
+}
+
+a {
+    transition: all .5s ease;
+}
+
+a:hover {
+    color: var(--white);
+}
+
+body {
+    font-family: 'Oxanium', cursive;
+}
+
+.menu {
+    z-index: 999;
+    transition: all 1s ease-in-out;
+}
+
+
+
+.menu>div:first-child {
+    height: 3px;
+    width: 30px;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 5px;
+    right: 0;
+    position: relative;
+}
+
+.menu>div:nth-child(2) {
+    height: 3px;
+    width: 20px;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    /* margin-top: 5px; */
+    right: 0;
+    position: relative;
+
+}
+
+.menu>div:last-child {
+    height: 3px;
+    width: 10px;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    margin-top: 5px;
+    right: 0;
+    position: relative;
+}
+
+.active>div:first-child {
+    transform: rotate(45deg) translate(5px, 1px);
+}
+
+.active>div:nth-child(2) {
+    display: none;
+}
+
+.active>div:last-child {
+    width: 30px;
+    transform: rotate(-45deg) translate(5px, -1px);
+}
+
+
+/***************************this is the header section*******************************/
+
+header {
+    background-color: var(--dark-color);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    padding: 1em;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav,
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+nav {
+    margin-left: 1em;
+}
+
+.nav-links li a {
+    color: var(--white);
+}
+
+.search {
+    font-family: 'Oxanium', cursive;
+    font-size: 1.1em;
+    margin-right: auto;
+    margin-left: 3em;
+    padding: .7em;
+    border-radius: 10px;
+    width: 300px;
+    background-color: var(--gray);
+    opacity: .4em;
+    color: var(--white);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: .3em;
+}
+
+/* this is for the hero section styling */
+
+.hero-section {
+    background-image: url(images/hero-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 8em;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    color: var(--white);
+    padding: 2em;
+}
+
+.hero-images {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.nft2,
+.nft3,
+.nft4,
+.nft5 {
+    position: absolute;
+
+}
+
+.nft1 {
+    z-index: 2;
+}
+
+.nft3 {
+    margin-left: -100px;
+}
+
+.nft2 {
+    margin-left: -200px;
+}
+
+.nft4 {
+    right: 0;
+    margin-right: -200px;
+}
+
+.nft5 {
+    right: 0;
+    z-index: 1;
+    margin-right: -100px;
+}
+
+.nft2,
+.nft4 {
+    width: 150px;
+}
+
+.hero-btn {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+/* this is the notable cards section styling */
+
+.notable-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    padding-top: 8em;
+}
+
+.notable-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3em;
+    padding: 3em;
+}
+
+.notable-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.notable-cards h2,
+.collection-text h2 {
+    font-size: 1.4em;
+}
+
+.notable-card::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 70%;
+    width: 100%;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.924) 25%, rgba(27, 26, 26, 0) 80%);
+}
+
+.notable-writeup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    bottom: 20px;
+    z-index: 4;
+    padding: 2em;
+}
+
+.notable-card img {
+    border-radius: 20px;
+    border: 8px solid var(--secondary-color);
+    width: 100%;
+}
+
+/* this is the trading section styling */
+
+.trading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    padding-top: 4em;
+}
+
+.trading-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 3em;
+}
+
+.trading-grid-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.trading-grid-top,
+.trading-grid-bottom {
+    padding: .5em;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+}
+
+.trading-grid-top img {
+    width: 100%;
+}
+
+.trading-grid-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3em;
+}
+
+.bids,
+.ends {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.profile,
+.eth {
+    display: flex;
+    align-items: center;
+    gap: .4em;
+}
+
+/* top collection section */
+
+.topcollection-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    text-align: center;
+    padding-top: 4em;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 2em;
+}
+
+.collection-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.collection-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.collection-image img {
+    width: 100%;
+}
+
+
+/* creator section stlying */
+
+.creator-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.creator-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background: url(images/spotlight-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fly {
+    position: relative;
+    z-index: 7;
+}
+
+.creator-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding: 8em 0;
+}
+
+
+/* this is the explore option section styling */
+
+.explore-options {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.market-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding-bottom: 4em;
+}
+
+/* this is the footer section styling */
+
+footer {
+    background-color: var(--gray);
+    padding: 2em;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    padding: 2em;
+}
+
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-right: 2px solid rgb(106, 106, 106);
+    margin-right: 5em;
+}
+
+.rarity {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+footer p {
+    color: var(--white);
+    font-size: 2em;
+}
+
+.rarity ul,
+.quick {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.rarity a {
+    color: rgb(106, 106, 106);
+    transition: 0.5 all ease;
+}
+
+.rarity a:hover {
+    color: var(--white);
+}
+
+.socials {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.socials img {
+    padding: 1em;
+    height: 60px;
+    border-radius: 10px;
+    background-color: rgb(106, 106, 106);
+}
+
+/* this is the part for the media queries */
+
+@media only screen and (min-width: 1240px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0px;
+        height: 70vh;
+        align-items: flex-start;
+        padding-top: 100px;
+        background-color: var(--dark-color);
+        transform: translateY(-500%);
+        transition: all 1s ease-in-out;
+        z-index: -1;
+        margin: 0;
+        padding-left: 1em;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav li {
+        padding-right: 1em;
+    }
+
+    .menu-open {
+        transform: translate(0);
+    }
+
+    .trading-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .notable-cards {
+        place-content: center;
+        grid-template-columns: .6fr;
+    }
+
+    .collection-grid {
+        place-content: center;
+        grid-template-columns: .8fr;
+    }
+}
+
+@media only screen and (max-width: 1010px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo-area {
+        border-right: none;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    .fly {
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nft1 {
+        width: 200px;
+    }
+
+    .nft5,
+    .nft3 {
+        width: 150px;
+    }
+
+    .nft2,
+    .nft4 {
+        width: 100px;
+    }
+
+    .nft2 {
+        margin-left: -160px;
+    }
+
+    .nft4 {
+        margin-right: -160px;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .search {
+        position: absolute;
+        left: 0;
+        margin-left: 1em;
+        margin-top: 160px;
+    }
+
+    nav {
+        padding-top: 180px;
+        height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 628px) {
+    .explore-options {
+        font-size: 12px;
+    }
+
+    .collection-grid {
+        padding: 0;
+    }
+
+    .fly {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .notable-cards {
+        grid-template-columns: 1fr;
+        padding: 1em;
+    }
+
+    .fly {
+        width: 400px;
+    }
+
+    .explore-options {
+        flex-direction: column;
+    }
+
+    .nft2,
+    .nft4 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .hero-btn {
+        flex-direction: column;
+    }
+
+    .socials {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nft1 {
+        width: 150px;
+    }
+
+    .nft3,
+    .nft5 {
+        width: 100px;
+    }
+
+    .nft5 {
+        margin-right: -60px;
+    }
+
+    .nft3 {
+        margin-left: -50px;
+    }
+
+    .trading-grid {
+        padding: 0;
+        margin: 0 1em;
+    }
+}
